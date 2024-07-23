@@ -10,6 +10,8 @@ import java.util.List;
 
 public class EmpresaController {
     public static void main(String[] args) {
+        //a Resposta no pacote model
+
         //b
         ClientePessoaFisica cpf1 = new ClientePessoaFisica("Ana", "Silva", "ana@email.com", 7, 10.0, "111.222.333-34");
         ClientePessoaFisica cpf2 = new ClientePessoaFisica("Rafael", "Torres", "rafa@email.com", 6, 10.0, "222.333.444-55");
@@ -45,7 +47,7 @@ public class EmpresaController {
         System.out.println("Lista criada:");
         System.out.println(socios);
 
-        //e feito nos construtores
+        //e foi feito nos construtores (a outra opção seria utilizar os setters)
         System.out.println("******** E ********");
 
         //f
@@ -82,6 +84,7 @@ public class EmpresaController {
         socios.sort(Comparator.comparing(Socio::getQuantidadeDeAcoes));
         System.out.println(socios);
 
+        //Solução para quem trabalhou com duas listas, List<Cliente> e List<Funcionario>
 //        List<Socio> socioList = new ArrayList<>();
 //        socioList.addAll(listaDeFuncionarios);
 //        socioList.addAll(listaDeClientes);
@@ -117,6 +120,7 @@ public class EmpresaController {
             }
         }
 
+        //Ou
         int max = socios.stream().mapToInt(Socio::getQuantidadeDeAcoes).max().getAsInt();
         for (Socio socio : socios) {
             if(max == socio.getQuantidadeDeAcoes()){
